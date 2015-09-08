@@ -1,0 +1,4 @@
+vatsimsso:
+    build: .
+    ports:
+        - "5000:80"

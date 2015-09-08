@@ -1,0 +1,5 @@
+{
+    "require": {
+        "vatsim/sso": "2.0"
+    }
+}
