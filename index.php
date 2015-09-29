@@ -7,7 +7,7 @@ require 'config.php';
 use Vatsim\OAuth\SSO;
 $sso = new SSO($base, $key, $secret, $method, $cert);
 // Outside Laravel
-$return = $_POST['callback'];
+$return = "http://fuck.io/User/login";
 $sso->login(
     $return,
     function($key, $secret, $url) {
