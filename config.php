@@ -12,13 +12,13 @@ $base = 'http://sso.hardern.net/server/';
 /*
  * The consumer key for your organisation (provided by VATSIM)
  */
-$key = 'SSO_DEMO_VACC';
+$key = 'SKYEVENT01';
 
 /*
  * The secret key for your organisation (provided by VATSIM)
  * Do not give this to anyone else or display it to your users. It must be kept server-side
  */
-$secret = '04i_~ruVUE.1-do1--sc';
+$secret = 'ZIEV4Flhmj2_~1.-oQCO';
 
 /*
  * The signing method you are using to encrypt your request signature.
