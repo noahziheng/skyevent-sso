@@ -7,7 +7,7 @@
 /*
  * The location of the VATSIM OAuth interface
  */
-$base = 'https://cert.vatsim.net/sso/';
+$base = 'https://cert.vatsim.net/sso';
 
 /*
  * The consumer key for your organisation (provided by VATSIM)
