@@ -10,6 +10,8 @@ $sso = new SSO($base, $key, $secret, $method, $cert);
 $sso->login(
     $return,
     function($key, $secret, $url) {
-    	echo json_encode(array($key,$secret,$url));
+        $_SESSION['vatsimauth'] = compact('key', 'secret');
+        header('Location: ' . $url);
+        die();
     }
 );
