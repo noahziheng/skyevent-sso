@@ -1,0 +1,17 @@
+sso:
+    image: daocloud.io/noahziheng/skyevent-sso
+    links:
+     - redis
+    expose:
+     - "80"
+    environment:
+      - VIRTUAL_HOST=sso.skyevent.tk
+    restart: always
+
+redis:
+    image: redis
+    ports:
+     - "6379"
+    environment:
+      - REDIS_PASS=**None**
+    restart: always
