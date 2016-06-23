@@ -10,7 +10,7 @@ date_default_timezone_set('PRC');
 use Vatsim\OAuth\SSO;
 
 $redis = new Redis();
-$redis->connect('redis', 6379);
+$redis->connect('216.189.52.222', 6379);
 
 $sso = new SSO($base, $key, $secret, $method, $cert);
 // Outside Laravel
