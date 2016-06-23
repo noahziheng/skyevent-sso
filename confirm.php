@@ -9,25 +9,21 @@ date_default_timezone_set('PRC');
 
 use Vatsim\OAuth\SSO;
 
-//$redis = new Redis();
-//$redis->connect('redis', 6379);
+$redis = new Redis();
+$redis->connect('redis', 6379);
 
 $sso = new SSO($base, $key, $secret, $method, $cert);
 // Outside Laravel
 $session = $_SESSION['vatsimauth'];
-$callback = $_SESSION['callback'];
 $sso->validate(
     $session['key'],
     $session['secret'],
     $_GET['oauth_verifier'],
     function($user, $request) {
       unset($_SESSION['vatsimauth']);
-      //$redis->set("user-".md5($user->id), json_encode($user));
+      $redis->set("user-".$user->id, json_encode($user));
       try {
-          var_dump($callback);
-          var_dump($_SESSION['callback']);
-          var_dump($user);
-          //header('Location: ' . str_replace('$userhash',md5($user->id),$callback);
+          header('Location: ' . str_replace('$userhash',$user->id,$_SESSION['callback']);
           die();
         } catch (CloudException $ex) {
           die($ex);
