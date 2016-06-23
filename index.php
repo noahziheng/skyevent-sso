@@ -4,14 +4,16 @@
 require 'vendor/autoload.php';
 require 'config.php';
 
+session_start();
+
 use Vatsim\OAuth\SSO;
 $sso = new SSO($base, $key, $secret, $method, $cert);
 // Outside Laravel
 $sso->login(
     $return,
     function($key, $secret, $url) {
-        $_SESSION['vatsimauth'] = compact('key', 'secret');
-        header('Location: ' . $url);
-        die();
+    	$_SESSION['vatsimauth'] = compact('key', 'secret');
+      header('Location: ' . $url);
+      die();
     }
 );

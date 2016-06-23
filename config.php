@@ -37,4 +37,4 @@ $cert = '';
  * The URL users will be redirected to after they log in, this should
  * be on the same server as the request
  */
-$return = 'http://fuck.io/User/login';
+$return = 'http://sso.skyevent.tk/confirm.php';

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
+    'LeanCloud\\' => array($vendorDir . '/leancloud/leancloud-sdk/src/LeanCloud'),
     'Illuminate\\Support\\' => array($vendorDir . '/illuminate/support'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Container\\' => array($vendorDir . '/illuminate/container'),
