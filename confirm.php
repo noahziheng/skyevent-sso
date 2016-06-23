@@ -22,11 +22,10 @@ $sso->validate(
     $_GET['oauth_verifier'],
     function($user, $request) {
       unset($_SESSION['vatsimauth']);
-      unset($_SESSION['callback']);
       //$redis->set("user-".md5($user->id), json_encode($user));
       try {
           var_dump($callback);
-          var_dump($session);
+          var_dump($_SESSION['callback']);
           var_dump($user);
           //header('Location: ' . str_replace('$userhash',md5($user->id),$callback);
           die();
