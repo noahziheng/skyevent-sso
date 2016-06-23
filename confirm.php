@@ -20,7 +20,9 @@ $sso->validate(
       unset($_SESSION['vatsimauth']);
       $redis = new Redis();
       $redis->connect('redis', 6379);
+      $user->token=md5(time());
       $redis->set("user-".$user->id, json_encode($user));
+      $redis->expire('$key', 3600*1440*7);
       try {
           header('Location: ' . $_SESSION['callback'] . $user->id);
           die();
