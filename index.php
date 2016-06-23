@@ -10,10 +10,10 @@ use Vatsim\OAuth\SSO;
 $sso = new SSO($base, $key, $secret, $method, $cert);
 // Outside Laravel
 $sso->login(
-    $return,
+    $return."?callback=".$_GET['callback'],
     function($key, $secret, $url) {
-    	$_SESSION['vatsimauth'] = compact('key', 'secret');
-      header('Location: ' . $url);
-      die();
+        $_SESSION['vatsimauth'] = compact('key', 'secret');
+        header('Location: ' . $url);
+        die();
     }
 );

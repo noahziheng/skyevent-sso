@@ -1,6 +1,5 @@
 {
     "require": {
-        "vatsim/sso": "2.0",
-        "leancloud/leancloud-sdk": "^0.2.5"
+        "vatsim/sso": "2.0"
     }
 }
