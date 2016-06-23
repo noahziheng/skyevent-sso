@@ -23,7 +23,7 @@ $sso->validate(
       unset($_SESSION['vatsimauth']);
       //$redis->set("user-".$user->id, json_encode($user));
       try {
-          header('Location: ' . str_replace('$userhash',$user->id,$_SESSION['callback']);
+          header('Location: ' . $_SESSION['callback'] . $user->id;
           die();
         } catch (CloudException $ex) {
           die($ex);
