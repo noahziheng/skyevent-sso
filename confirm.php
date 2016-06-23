@@ -15,15 +15,17 @@ $redis->connect('redis', 6379);
 $sso = new SSO($base, $key, $secret, $method, $cert);
 // Outside Laravel
 $session = $_SESSION['vatsimauth'];
+$callback = $_SESSION['callback'];
 $sso->validate(
     $session['key'],
     $session['secret'],
     $_GET['oauth_verifier'],
     function($user, $request) {
       unset($_SESSION['vatsimauth']);
+      unset($_SESSION['callback']);
       $redis->set("user-".md5($user->id), json_encode($user));
       try {
-          header('Location: ' . str_replace('$userhash',md5($user->id),$_GET['callback']);
+          header('Location: ' . str_replace('$userhash',md5($user->id),$callback);
           die();
         } catch (CloudException $ex) {
           die($ex);
