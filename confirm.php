@@ -9,8 +9,8 @@ date_default_timezone_set('PRC');
 
 use Vatsim\OAuth\SSO;
 
-$redis = new Redis();
-$redis->connect('redis', 6379);
+//$redis = new Redis();
+//$redis->connect('redis', 6379);
 
 $sso = new SSO($base, $key, $secret, $method, $cert);
 // Outside Laravel
@@ -23,7 +23,7 @@ $sso->validate(
     function($user, $request) {
       unset($_SESSION['vatsimauth']);
       unset($_SESSION['callback']);
-      $redis->set("user-".md5($user->id), json_encode($user));
+      //$redis->set("user-".md5($user->id), json_encode($user));
       try {
           header('Location: ' . str_replace('$userhash',md5($user->id),$callback);
           die();
