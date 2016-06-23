@@ -25,7 +25,10 @@ $sso->validate(
       unset($_SESSION['callback']);
       //$redis->set("user-".md5($user->id), json_encode($user));
       try {
-          header('Location: ' . str_replace('$userhash',md5($user->id),$callback);
+          var_dump($callback);
+          var_dump($session);
+          var_dump($user);
+          //header('Location: ' . str_replace('$userhash',md5($user->id),$callback);
           die();
         } catch (CloudException $ex) {
           die($ex);
