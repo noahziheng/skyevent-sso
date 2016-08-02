@@ -20,6 +20,7 @@ $sso->validate(
       unset($_SESSION['vatsimauth']);
       $redis = new Redis();
       $redis->connect('redis', 6379);
+      $redis->auth('4OwqwaCo7nGxhQLRDSdd');
       $user->token=md5(time());
       $redis->set("user-".$user->id, json_encode($user));
       try {
